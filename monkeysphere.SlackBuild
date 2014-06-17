@@ -93,7 +93,7 @@ if [ -e "$CWD/Manifest" ]; then
   # Manifest signature checking
   if grep -q -- "-----BEGIN PGP SIGNED MESSAGE-----" $CWD/Manifest; then
     echo "Checking Manifest signature..."
-    gpg --verify $CWD/Manifest
+    gpgv $CWD/Manifest
     if [ "$?" != "0" ]; then
       exit $ERROR_MANIFEST
     fi
