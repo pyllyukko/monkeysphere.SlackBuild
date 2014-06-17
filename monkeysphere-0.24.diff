@@ -1,0 +1,15 @@
+diff -Naur monkeysphere-0.24.orig/src/share/common monkeysphere-0.24/src/share/common
+--- monkeysphere-0.24.orig/src/share/common	2009-03-03 14:02:00.000000000 -0300
++++ monkeysphere-0.24/src/share/common	2009-06-28 22:39:37.000000000 -0300
+@@ -415,6 +415,11 @@
+     uname="$1"
+     path="$2"
+ 
++    # rewrite path if it points to a symlink
++    if [ -h "$path" ] ; then
++      path="`readlink $path`"
++    fi
++
+     log debug "checking path permission '$path'..."
+ 
+     # return 255 if cannot stat file
