@@ -32,7 +32,7 @@ CWD="$(pwd)"
 SRC_NAME="monkeysphere"
 PKG_NAME="monkeysphere"
 ARCH=${ARCH:=i486}
-SRC_VERSION=${VERSION:=0.28}
+SRC_VERSION=${VERSION:=0.36}
 PKG_VERSION="$(echo "$SRC_VERSION" | tr '[[:blank:]-]' '_')"
 BUILD=${BUILD:=1rha}
 SRC_DIR=${SRC_DIR:=$CWD}/$PKG_NAME
