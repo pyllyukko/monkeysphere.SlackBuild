@@ -99,6 +99,14 @@ if [ -e "$CWD/Manifest" ]; then
     fi
   fi
 
+  pushd monkeysphere
+  sed -n '/^[0-9a-f]\{64\}/s/\.\./\./p' ../Manifest | sha256sum -c
+  if [ ${PIPESTATUS[1]} -ne 0 ]
+  then
+    exit ${ERROR_MD5}
+  fi
+  popd
+
   MANIFEST_LINES="`grep -E -v "^(MKBUILD|SLACKBUILD)" $CWD/Manifest | wc -l`"
 
   for ((MANIFEST_COUNT=1; MANIFEST_COUNT <= $MANIFEST_LINES; MANIFEST_COUNT++)); do
