@@ -168,8 +168,7 @@ PKG_SRC="$PWD/`ls -l | awk '/^d/ { print $NF }'`"
 cd "$PKG_SRC"
 
 # Patch source
-patches=" [[PATCH URLS]]
-         $PKG_NAME.diff $PKG_NAME-$PKG_VERSION.diff
+patches="$PKG_NAME.diff $PKG_NAME-$PKG_VERSION.diff
          $PKG_NAME-$PKG_VERSION-$ARCH.diff $PKG_NAME-$ARCH.diff"
 for patch in $patches; do
   patch="`basename $patch`"
