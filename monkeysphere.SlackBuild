@@ -194,6 +194,9 @@ done
 # Compile
 make $NUMJOBS || exit $ERROR_MAKE
 
+# quick hack to get the docs into the right dir
+sed -i "s:/share/doc/monkeysphere:/doc/monkeysphere-${PKG_VERSION}:" Makefile
+
 # Install
 make install DESTDIR="$PKG" || exit $ERROR_INSTALL
 
