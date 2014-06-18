@@ -209,7 +209,7 @@ make install DESTDIR="$PKG" || exit $ERROR_INSTALL
 )
 
 # Install documentation
-DOCS="COPYING"
+DOCS="COPYING README"
 mkdir -p "$PKG/usr/doc/$PKG_NAME-$PKG_VERSION" || exit $ERROR_MKDIR
 for doc in $DOCS; do
   if [ -f "$doc" ]; then
