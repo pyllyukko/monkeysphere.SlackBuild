@@ -16,7 +16,7 @@
 #
 # slackbuild for monkeysphere, by Silvio Rhatto
 # requires: perl-digest-sha perl-crypt-openssl-rsa 
-# tested: monkeysphere-0.28
+# tested: monkeysphere-0.36
 # model: generic.mkSlackBuild $Rev: 824 $
 #
 
