@@ -34,7 +34,7 @@ PKG_NAME="monkeysphere"
 ARCH=${ARCH:=i486}
 SRC_VERSION=${VERSION:=0.36}
 PKG_VERSION="$(echo "$SRC_VERSION" | tr '[[:blank:]-]' '_')"
-BUILD=${BUILD:=1rha}
+BUILD=${BUILD:=2rha}
 SRC_DIR=${SRC_DIR:=$CWD}/$PKG_NAME
 TMP=${TMP:=/tmp}
 PKG=${PKG:=$TMP/package-$PKG_NAME}
