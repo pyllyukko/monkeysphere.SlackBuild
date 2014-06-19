@@ -100,6 +100,12 @@ if [ -e "$CWD/Manifest" ]; then
   fi
 
   echo "Checking Manifest for package's integrity..."
+  grep -q "^[0-9a-f]\{64\}  .*monkeysphere_[0-9.]\+\.orig\.tar\.gz$" ${CWD}/Manifest
+  if [ ${?} -ne 0 ]
+  then
+    echo "Error: SHA-2 checksum not found on the Manifest file" 1>&2
+    exit 1
+  fi
   pushd monkeysphere
   sed -n '/^[0-9a-f]\{64\}/s/\.\./\./p' ../Manifest | sha256sum -c
   if [ ${PIPESTATUS[1]} -ne 0 ]
