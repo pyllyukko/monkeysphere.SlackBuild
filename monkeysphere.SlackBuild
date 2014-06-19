@@ -99,63 +99,15 @@ if [ -e "$CWD/Manifest" ]; then
     fi
   fi
 
+  echo "Checking Manifest for package's integrity..."
   pushd monkeysphere
   sed -n '/^[0-9a-f]\{64\}/s/\.\./\./p' ../Manifest | sha256sum -c
   if [ ${PIPESTATUS[1]} -ne 0 ]
   then
+    echo "Error: SHA-2 check failed" 1>&2
     exit ${ERROR_MD5}
   fi
   popd
-
-  MANIFEST_LINES="`grep -E -v "^(MKBUILD|SLACKBUILD)" $CWD/Manifest | wc -l`"
-
-  for ((MANIFEST_COUNT=1; MANIFEST_COUNT <= $MANIFEST_LINES; MANIFEST_COUNT++)); do
-
-    MANIFEST_LINE="`grep -E -v "^(MKBUILD|SLACKBUILD)" $CWD/Manifest | head -n $MANIFEST_COUNT | tail -n 1`"
-    MANIFEST_FILE="`echo $MANIFEST_LINE | awk '{ print $2 }'`"
-    MANIFEST_FILE_TYPE="`echo $MANIFEST_LINE | awk '{ print $1 }'`"
-
-    if [ -e "$SRC_DIR/$MANIFEST_FILE" ]; then
-      MANIFEST_FILE="$SRC_DIR/$MANIFEST_FILE"
-    else
-      MANIFEST_FILE="`find $CWD -name $MANIFEST_FILE`"
-    fi
-
-    if [ ! -e "$MANIFEST_FILE" ] || [ -d "$MANIFEST_FILE" ]; then
-      continue
-    fi
-
-    echo "Checking Manifest for $MANIFEST_FILE_TYPE $MANIFEST_FILE integrity..."
-
-    SIZE_SRC="`wc -c $MANIFEST_FILE | awk '{ print $1 }'`"
-    SIZE_MANIFEST="`echo $MANIFEST_LINE | awk '{ print $3 }'`"
-
-    # Check source code size
-    if [ "$SIZE_SRC" != "$SIZE_MANIFEST" ]; then
-      echo "SIZE Manifest: $SIZE_MANIFEST; SIZE $SRC: $SIZE_SRC"
-      exit $ERROR_MANIFEST
-    else
-      echo "Size match."
-    fi
-
-    # Check source code integrity
-    for ALGO in md5 rmd160 sha1 sha256 sha512; do
-      if [ $ALGO = "rmd160" ]; then
-        ALGO_SRC="`openssl rmd160 $MANIFEST_FILE | awk '{ print $2 }'`"
-      else
-        ALGO_SRC="`"$ALGO"sum $MANIFEST_FILE | awk '{ print $1 }'`"
-      fi
-      ALGO="`echo $ALGO | tr '[:lower:]' '[:upper:]'`"
-      ALGO_MANIFEST=$(echo $MANIFEST_LINE | sed "s/.* $ALGO //" | awk '{ print $1 }')
-      if [ "$ALGO_SRC" != "$ALGO_MANIFEST" ]; then
-        echo "$ALGO Manifest: $ALGO_MANIFEST; $ALGO $SRC: $ALGO_SRC"
-        exit $ERROR_MANIFEST
-      else
-        echo "$ALGO match."
-      fi
-    done
-
-  done
 
 else
   exit $ERROR_MANIFEST
