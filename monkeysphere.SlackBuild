@@ -69,6 +69,16 @@ ERROR_TAR=37;       ERROR_MKPKG=38;     ERROR_GPG=39
 ERROR_PATCH=40;     ERROR_VCS=41;       ERROR_MKDIR=42
 ERROR_MANIFEST=43;
 
+if ! getent group monkeysphere 1>/dev/null
+then
+  echo -e "Error: you must have the \"monkeysphere\" group. Create it with:\n       groupadd -r monkeysphere" 1>&2
+  exit 1
+elif ! getent passwd monkeysphere 1>/dev/null
+then
+  echo -e "Error: you must have the \"monkeysphere\" user. Create it with:\n       useradd -g monkeysphere -r -d /var/lib/monkeysphere -M -s /sbin/nologin -e 1970-01-02 monkeysphere" 1>&2
+  exit 1
+fi
+
 # Clean up any leftovers of previous builds
 rm -rf "$PKG_WORK" 2> /dev/null
 rm -rf "$PKG" 2> /dev/null
