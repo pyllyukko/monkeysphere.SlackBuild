@@ -1,32 +1,32 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-checksums for the monkeysphere 0.36 release:
+checksums for the monkeysphere 0.37 release:
 
 MD5:
-5ee59527f7386b6670ec2979d3576b8e  ../monkeysphere_0.36.orig.tar.gz
+4f5b146f7c85cde331f640b605f6073e  ../monkeysphere_0.37.orig.tar.gz
 
 SHA1:
-c4f950346040f7703cb4c6e8b32022f4361d0c9d  ../monkeysphere_0.36.orig.tar.gz
+1fab51ae4c1a19d8bbc358db8e2ce7df337cc93e  ../monkeysphere_0.37.orig.tar.gz
 
 SHA256:
-6ae4edeff2cc29b6913346e15b61500ea7cc06d761a9f42e67de83b7d2607be7  ../monkeysphere_0.36.orig.tar.gz
+b510b8a414fb400356e80f1f882488785df72ac54078410b54d4c50a84686e59  ../monkeysphere_0.37.orig.tar.gz
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.12 (GNU/Linux)
+Version: GnuPG v1
 
-iQJ8BAEBCgBmBQJR3w68XxSAAAAAAC4AKGlzc3Vlci1mcHJAbm90YXRpb25zLm9w
+iQJ8BAEBCgBmBQJT4nWFXxSAAAAAAC4AKGlzc3Vlci1mcHJAbm90YXRpb25zLm9w
 ZW5wZ3AuZmlmdGhob3JzZW1hbi5uZXQyRThERDI2QzUzRjExOTdEREY0MDNFNjEx
-OEU2NjdGMUVCOEFGMzE0AAoJEBjmZ/HrivMUgaUQAML8uqoHqthNcJMHuWKpTNtS
-iLSHVmYizjJPOSjoOQRUr5Vg2NmBKriDvMkzzMSdaoGnZehxSgQslqZ+wsDJr6cX
-9Ef4tb3fcbluaKt/11u/MghK/USbtGG9gy80sfCQ8H7Fv/n0b0L0SFBJxvyECO7q
-1HqKE0pyUlXHliEpGx4LfggPzDUha5Psvv19MsZR3b2zxcaDmhpXZcGHjbj3UXP0
-IJV422tYA6P/8sVFtMElURLqmq3cqDyRaB8Ih+q12CgRKFRoWtxtYGrc7VnOco+j
-o6ar4RlSdTjJ/fAbgPLIulJH+/FeGnlathNk2xkr6bABMxUPG2PR32CTiyEJmwkw
-H5alBu3eFzBqVKbiudPEyU+/LBxx8YcPSiyh2GFOUa2yMxfvcLLZHmDMf8PQB63c
-S+uN9IntWYb1++iNO2MpeeduCOPZoMMkVeg4EQpQB+uRUfIujwlVWsflRBnQUpgb
-g032wk7TFH7aHbbdB6l+oYswGynIPZDKU9QLiukN9GRCqRnahV2RaIlNGZ8HI4Lv
-gLhiEUWmvLyFqDNakK7ovSKuZBEm6ka5l4Z1AycXWQxKt5kpFPirkk+owCIuWukJ
-HiNz1t2FrldS6YgUN7M0uhqzxp2OVysjcYBBQOcz2Fyn8vazZgiKa8lZMucfFL5/
-1s0TkEpqHl43vh4Ph1+D
-=cJ6o
+OEU2NjdGMUVCOEFGMzE0AAoJEBjmZ/HrivMUUiIP/25VDjTSD/k03xGCWzMs+PJ7
++JcxLT9OOvN4R9NRz+A8H5BEwPs8TZAl9clrPoFX8/QyLIiiLAdB7YWJtFJyiHQW
+QwWUuqOMlgSkyYssirr4/acimLjo8RQqbIIX5ba+krFDfcGo6oWujZIC8+oGcylq
+7av7e/nbaQdjiEalGUpm1ifbL9bVWx2P1YvyGsvHZEGARALQtE+rWFObxtuvM+uT
+eH+uWeF4EDydCqvGYfu1Q756ModqkW+Dlrm5YlWUkIvebXoenZr+FdWjVOoMif0j
+xdYPbgH2M+M39h693JIH8IdaKFu4lIEoZBfoTM28j2Nb7W/dG1DLg4J462uFhC/e
+mzdjegHmDshsJgAcA2TiSXammFe2W0VczF7L8P9cMtWYyayPB1sqoEETUQC9kb/C
+GNaT0EVdbvFcgkD6Pe3stpE2DpGPtbr6tTjGMoGtE31HruqBR3VC1MA+yWOqy/Dg
+BkY9VOYuOOdqtfebu5JUnhleZJSIanLkce5bPs65eLjmHSUxxQnuJofhJz5rzzEL
+Ap4UKfmfOPCIhh8J0aSKSTO1JeuJMo8GHqO00kBau//niHPFkVQC23Ga8h5na23C
+ifkIL0kg87muBr6CD2JTEimK85UAvmKaorGckLgeuu2Un9gRiVZyW5IcMHqlcRYb
+pCX9lN21rOCKjJ3bvsok
+=3sVD
 -----END PGP SIGNATURE-----
