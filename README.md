@@ -14,4 +14,4 @@ Dependencies
 Notes
 -----
 
-* The Monkeysphere package can be verified with the Monkeysphere Archive Signing Key (0x18E667F1EB8AF314). As we use *gpgv*, it needs to be on the *trustedkeys.gpg* keyring so the script can use it.
+* The Monkeysphere package can be verified with the Monkeysphere Archive Signing Key (0x18E667F1EB8AF314). As we use `gpgv`, it needs to be on the `trustedkeys.gpg` keyring so the script can use it.
